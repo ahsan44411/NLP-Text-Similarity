@@ -48,25 +48,25 @@ unzip glove.6B.zip
 Import and download stop words
 
 .. code:: shell
-     import nltk
-     nltk.download('stopwords')
+          import nltk
+          nltk.download('stopwords')
 
 
 Import these helper functions to load the model, process the sentences, and remove stop words function.
 
 .. code:: shell
-     def loadGloveModel(gloveFile):
-         print ("Loading Glove Model")
-         with open(gloveFile, encoding="utf8" ) as f:
-             content = f.readlines()
-         model = {}
-         for line in content:
-             splitLine = line.split()
-             word = splitLine[0]
-             embedding = np.array([float(val) for val in splitLine[1:]])
-             model[word] = embedding
-         print ("Done.",len(model)," words loaded!")
-         return model
+      def loadGloveModel(gloveFile):
+          print ("Loading Glove Model")
+          with open(gloveFile, encoding="utf8" ) as f:
+              content = f.readlines()
+          model = {}
+          for line in content:
+              splitLine = line.split()
+              word = splitLine[0]
+              embedding = np.array([float(val) for val in splitLine[1:]])
+              model[word] = embedding
+          print ("Done.",len(model)," words loaded!")
+          return model
 
       def preprocess(raw_text):
 
