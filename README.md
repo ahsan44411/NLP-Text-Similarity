@@ -6,8 +6,11 @@ Nearly every NLP algorithm uses a word embedding technique for representation of
 
 Word2Vec uses a vector representation of words. For Example sentence “I go to school” will be represented as one-hot vectors in transpose i.e.
 I = [1,0,0,0]
+
 go = [0,1,0,0]
+
 to = [0,0,1,0]
+
 school = [0,0,0,1]
 
 But for words with the same contextual information, we introduce some dependence. So those same words occupy close spatial positions i.e good and great, pistol and gun occupy the space close to each other. 
@@ -18,21 +21,22 @@ Download Google Word2Vec from here
 wget http://magnitude.plasticity.ai/word2vec/GoogleNews-vectors-negative300.magnitude
 
 Install package pymagnitude
-pip3 install pymagnitude
+                  
+          pip3 install pymagnitude
 
 If this does not work use the following
 
-SKIP_MAGNITUDE_WHEEL=1 pip3 install pymagnitude==0.1.46 -vvvv
+          SKIP_MAGNITUDE_WHEEL=1 pip3 install pymagnitude==0.1.46 -vvvv
 
 Here’s the code
 
-from pymagnitude import Magnitude
-vectors = Magnitude('GoogleNews-vectors-negative300.magnitude')
+          from pymagnitude import Magnitude
+          vectors = Magnitude('GoogleNews-vectors-negative300.magnitude')
 
 
 
 Find similarity using
-print(vectors.similarity("Have a good day", "Have a nice day"))
+          print(vectors.similarity("Have a good day", "Have a nice day"))
 
 
 # Glove Guide (Code in GloVe.ipynb)
